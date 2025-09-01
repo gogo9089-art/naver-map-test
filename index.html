@@ -4,23 +4,32 @@
   <meta charset="UTF-8">
   <title>GitHub Pages 카카오 지도 예제</title>
   <style>
-    #map { width: 100%; height: 500px; }
-    body { font-family: Arial, sans-serif; padding: 20px; }
+    /* 지도 영역 크기 */
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
   </style>
-  <!-- 카카오 지도 SDK -->
+  <!-- 카카오 지도 SDK (JavaScript Key만 교체) -->
   <script type="text/javascript"
           src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=eedceafd79ba9d1b5d9c3a4a26cf48e2&autoload=true"></script>
 </head>
 <body>
-  <h2>카카오 지도 테스트</h2>
-  <p>서울 시청 위치에 마커 표시 및 인포윈도우</p>
+  <h2>카카오 지도 GitHub Pages 예제</h2>
+  <p>서울 시청 위치에 마커와 인포윈도우 표시</p>
+
+  <!-- 지도 표시 영역 -->
   <div id="map"></div>
 
   <script>
-    // 지도 생성
+    // SDK autoload=true이므로 바로 kakao 객체 사용 가능
     var map = new kakao.maps.Map(document.getElementById('map'), {
-      center: new kakao.maps.LatLng(37.5665, 126.9780),
-      level: 3
+      center: new kakao.maps.LatLng(37.5665, 126.9780), // 서울 시청 좌표
+      level: 3 // 확대 레벨
     });
 
     // 마커 생성
